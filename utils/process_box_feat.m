@@ -4,8 +4,8 @@ nVideo = size(video_info, 1);
 video_feat = zeros(size(box_feat, 1), nVideo);
 for n = 1:nVideo
     feature_set = box_feat(:, video_info(n, 1):video_info(n, 2));
-    video_feat(:, n) = max(feature_set, [], 2); % max pooling 
-%     video_feat(:, n) = mean(feature_set, 2); % avg pooling
+%     video_feat(:, n) = max(feature_set, [], 2); % max pooling 
+     video_feat(:, n) = mean(feature_set, 2); % avg pooling
 end
 
 %%% normalize train and test features
